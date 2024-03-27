@@ -1,0 +1,8 @@
+.settings
+factory_test*
+sampleGW_*
+sampleSwitch_*
+boot.link
+sampleContactSensor_*
+sampleLight_*
+hciDevice*

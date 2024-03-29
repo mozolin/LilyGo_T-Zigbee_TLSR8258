@@ -1,7 +1,8 @@
-# LilyGo T-Zigbee TLSR8258
-
-URL: https://github.com/mozolin/LilyGo_T-Zigbee_TLSR8258
-
-git init
-git remote add origin https://github.com/mozolin/LilyGo_T-Zigbee_TLSR8258.git
-git branch -M main
+URL: https://github.com/mozolin/LilyGo_T-Zigbee_TLSR8258  
+  
+# LilyGo T-Zigbee TLSR8258 (Telink SDK)  
+  
+![](img/esp32c3-tlsr8258_zigbee.jpg)  
+![](img/esp32c3-tlsr8258_zigbee.png)  
+![](img/ssd1306_tlsr8258-esp32c3.jpg)  
+![](img/ssd1306_zigbee.jpg)  

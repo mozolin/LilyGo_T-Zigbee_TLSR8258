@@ -15,25 +15,26 @@ Before firmware update, adjust the DIP switch:
 ![](img/upload_mode.png)
 
 1) Install Telink IDE – based on C/C++ Eclipse IDE (https://wiki.telink-semi.cn/wiki/IDE-and-Tools/IDE-for-TLSR8-Chips/)  
-2) Unpack Zigbee_SDK-LilyGO.zip (https://github.com/Xinyuan-LilyGO/telink-zigbee-sdk) into C:\TelinkSDK\_src_  
+2) Unpack project zip-file into the folder  
 ![](img/_hciDevice_ZR_8258_01.png)
 
 3) Import as Existing Project  
 ![](img/_hciDevice_ZR_8258_02.png)
 
-4) Select C:\TelinkSDK\_src_\tl_zigbee_sdk folder, check «…\build\tlsr_tc32» project, DO NOT check «Copy projects into workspace» (path settings for the project may be incorrect!)  
+4) Select "tlsr8258" folder, check «…\build\tlsr_tc32» project, DO NOT check «Copy projects into workspace» (path settings for the project may be incorrect!)  
 ![](img/_hciDevice_ZR_8258_03.png)
 
-5) Source code can be found in C:\TelinkSDK\_src_\tl_zigbee_sdk\apps\hciDevice folder  
-
-6) Choose under «Build» menu (hammer icon) the item «_hciDevice_ZR_8258 (Route-8258)»  
+5) Source code can be found in ..\tlsr8258\apps\hciDevice_ZR_8258 folder  
 ![](img/_hciDevice_ZR_8258_04.png)
 
-7) Make sure, that the build was successful  
+6) Choose under «Build» menu (hammer icon) the item «_hciDevice_ZR_8258 (Route-8258)»  
 ![](img/_hciDevice_ZR_8258_05.png)
 
-8) .BIN-file can be found here:  
+7) Make sure, that the build was successful  
 ![](img/_hciDevice_ZR_8258_06.png)
+
+8) .BIN-file can be found here:  
+![](img/_hciDevice_ZR_8258_07.png)
 
 9) Flash .BIN-file using TlsrComSwireWriter (https://github.com/pvvx/TlsrComSwireWriter)  
 ![](img/TLSR8258_Flash_01.png)

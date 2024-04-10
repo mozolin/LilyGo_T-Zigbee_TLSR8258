@@ -110,16 +110,14 @@ void stack_init(void)
  * @fn      user_app_init
  *
  * @brief   This function initialize the application(Endpoint) information for this node.
- *
  * @param   None
- *
  * @return  None
  */
 void user_app_init(void)
 {
   af_nodeDescManuCodeUpdate(MANUFACTURER_CODE_TELINK);
 
-    /* Initialize ZCL layer */
+  /* Initialize ZCL layer */
   /* Register Incoming ZCL Foundation command/response messages */
   zcl_init(app_zclProcessIncomingMsg);
 
@@ -129,16 +127,26 @@ void user_app_init(void)
   af_endpointRegister(APP_GW_ENDPOINT3, (af_simple_descriptor_t *)&app_simpleDesc3, zcl_rx_handler, NULL);
   af_endpointRegister(APP_GW_ENDPOINT4, (af_simple_descriptor_t *)&app_simpleDesc4, zcl_rx_handler, NULL);
   af_endpointRegister(APP_GW_ENDPOINT5, (af_simple_descriptor_t *)&app_simpleDesc5, zcl_rx_handler, NULL);
+  af_endpointRegister(APP_GW_ENDPOINT6, (af_simple_descriptor_t *)&app_simpleDesc6, zcl_rx_handler, NULL);
+  af_endpointRegister(APP_GW_ENDPOINT7, (af_simple_descriptor_t *)&app_simpleDesc7, zcl_rx_handler, NULL);
+  af_endpointRegister(APP_GW_ENDPOINT8, (af_simple_descriptor_t *)&app_simpleDesc8, zcl_rx_handler, NULL);
+  af_endpointRegister(APP_GW_ENDPOINT9, (af_simple_descriptor_t *)&app_simpleDesc9, zcl_rx_handler, NULL);
+  af_endpointRegister(APP_GW_ENDPOINT10, (af_simple_descriptor_t *)&app_simpleDesc10, zcl_rx_handler, NULL);
   
  	/* Initialize or restore attributes, this must before 'zcl_register()' */
 	zcl_reportingTabInit();
   
   /* Register ZCL specific cluster information */
   zcl_register(APP_GW_ENDPOINT, APP_GW_CB_CLUSTER_NUM, (zcl_specClusterInfo_t *)g_appClusterList);
-  zcl_register(APP_GW_ENDPOINT2, APP_GW_CB_CLUSTER_NUM2, (zcl_specClusterInfo_t *)g_appClusterList2);
-  zcl_register(APP_GW_ENDPOINT3, APP_GW_CB_CLUSTER_NUM3, (zcl_specClusterInfo_t *)g_appClusterList3);
-  zcl_register(APP_GW_ENDPOINT4, APP_GW_CB_CLUSTER_NUM4, (zcl_specClusterInfo_t *)g_appClusterList4);
-  zcl_register(APP_GW_ENDPOINT5, APP_GW_CB_CLUSTER_NUM5, (zcl_specClusterInfo_t *)g_appClusterList5);
+  zcl_register(APP_GW_ENDPOINT2, APP_GW_CB_CLUSTER_NUM_EXTRA, (zcl_specClusterInfo_t *)g_appClusterListExtra);
+  zcl_register(APP_GW_ENDPOINT3, APP_GW_CB_CLUSTER_NUM_EXTRA, (zcl_specClusterInfo_t *)g_appClusterListExtra);
+  zcl_register(APP_GW_ENDPOINT4, APP_GW_CB_CLUSTER_NUM_EXTRA, (zcl_specClusterInfo_t *)g_appClusterListExtra);
+  zcl_register(APP_GW_ENDPOINT5, APP_GW_CB_CLUSTER_NUM_EXTRA, (zcl_specClusterInfo_t *)g_appClusterListExtra);
+  zcl_register(APP_GW_ENDPOINT6, APP_GW_CB_CLUSTER_NUM_EXTRA, (zcl_specClusterInfo_t *)g_appClusterListExtra);
+  zcl_register(APP_GW_ENDPOINT7, APP_GW_CB_CLUSTER_NUM_EXTRA, (zcl_specClusterInfo_t *)g_appClusterListExtra);
+  zcl_register(APP_GW_ENDPOINT8, APP_GW_CB_CLUSTER_NUM_EXTRA, (zcl_specClusterInfo_t *)g_appClusterListExtra);
+  zcl_register(APP_GW_ENDPOINT9, APP_GW_CB_CLUSTER_NUM_EXTRA, (zcl_specClusterInfo_t *)g_appClusterListExtra);
+  zcl_register(APP_GW_ENDPOINT10, APP_GW_CB_CLUSTER_NUM_EXTRA, (zcl_specClusterInfo_t *)g_appClusterListExtra);
 
 //#ifdef ZCL_GREEN_POWER
 //  gp_init();
@@ -147,19 +155,6 @@ void user_app_init(void)
 #ifdef ZCL_OTA
   ota_init(OTA_TYPE_SERVER, (af_simple_descriptor_t *)&app_simpleDesc, &app_otaInfo, NULL);
 #endif
-
-	//#define ZCL_TEMPERATURE_MEASUREMENT_ATTRID_MEASUREDVALUE     0x0000
-	//#define ZCL_TEMPERATURE_MEASUREMENT_ATTRID_MINMEASUREDVALUE  0x0001
-	//#define ZCL_TEMPERATURE_MEASUREMENT_ATTRID_MAXMEASUREDVALUE  0x0002
-	//#define ZCL_TEMPERATURE_MEASUREMENT_ATTRID_TOLERANCE         0x0003
-	/*
-	u16 temperature = 32687;
-	zcl_setAttrVal(APP_GW_ENDPOINT, ZCL_CLUSTER_MS_TEMPERATURE_MEASUREMENT, ZCL_TEMPERATURE_MEASUREMENT_ATTRID_MEASUREDVALUE, (u8*)&temperature);
-	zcl_setAttrVal(APP_GW_ENDPOINT2, ZCL_CLUSTER_MS_TEMPERATURE_MEASUREMENT, ZCL_TEMPERATURE_MEASUREMENT_ATTRID_MEASUREDVALUE, (u8*)&temperature);
-	zcl_setAttrVal(APP_GW_ENDPOINT3, ZCL_CLUSTER_MS_TEMPERATURE_MEASUREMENT, ZCL_TEMPERATURE_MEASUREMENT_ATTRID_MEASUREDVALUE, (u8*)&temperature);
-	zcl_setAttrVal(APP_GW_ENDPOINT4, ZCL_CLUSTER_MS_TEMPERATURE_MEASUREMENT, ZCL_TEMPERATURE_MEASUREMENT_ATTRID_MEASUREDVALUE, (u8*)&temperature);
-	zcl_setAttrVal(APP_GW_ENDPOINT5, ZCL_CLUSTER_MS_TEMPERATURE_MEASUREMENT, ZCL_TEMPERATURE_MEASUREMENT_ATTRID_MEASUREDVALUE, (u8*)&temperature);
-	*/
 }
 
 
@@ -238,12 +233,12 @@ void user_init(bool isRetention)
 
   /* User's Task */
 #if ZBHCI_EN
-    /*
-     * define ZBHCI_USB_PRINT, ZBHCI_USB_CDC or ZBHCI_UART as 1 in app_cfg.h
-     * if needing to enable ZBHCI_EN
-     *
-     * */
-    zbhciInit();
+  /*
+   * define ZBHCI_USB_PRINT, ZBHCI_USB_CDC or ZBHCI_UART as 1 in app_cfg.h
+   * if needing to enable ZBHCI_EN
+   *
+   * */
+  zbhciInit();
   ev_on_poll(EV_POLL_HCI, zbhciTask);
 #endif
   ev_on_poll(EV_POLL_IDLE, app_task);
@@ -255,8 +250,7 @@ void user_init(bool isRetention)
    * once initialization is done, the g_zbDemoBdbCb.bdbInitCb() will be called
    *
    * */
-    bdb_init((af_simple_descriptor_t *)&app_simpleDesc, &g_bdbCommissionSetting, &g_zbDemoBdbCb, 1);
+  bdb_init((af_simple_descriptor_t *)&app_simpleDesc, &g_bdbCommissionSetting, &g_zbDemoBdbCb, 1);
 }
 
 #endif  /* __PROJECT_TL_GW__ */
-

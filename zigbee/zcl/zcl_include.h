@@ -78,6 +78,8 @@
 #include "security_safety/zcl_ias_wd.h"
 
 /* Measurement and Sensing */
+//#include "measument_sensing/zcl_humidity_measurement.h"
+//#include "measument_sensing/zcl_pressure_measurement.h"
 #include "measument_sensing/zcl_illuminance_measurement.h"
 #include "measument_sensing/zcl_occupancy_sensing.h"
 #include "measument_sensing/zcl_temperature_measurement.h"

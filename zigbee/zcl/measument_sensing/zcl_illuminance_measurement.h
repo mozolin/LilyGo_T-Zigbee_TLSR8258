@@ -61,6 +61,11 @@
 #define ZCL_ATTRID_LIGHT_SENSOR_TYPE                      0x0004
 
 
+#if 0
+extern const zclAttrInfo_t illuminanceMeasure_attrTbl[];
+extern const u8 zcl_illuminanceMeasure_attrNum;
+#endif
+
 
 
 status_t zcl_illuminanceMeasure_register(u8 endpoint, u16 manuCode, u8 attrNum, const zclAttrInfo_t attrTbl[], cluster_forAppCb_t cb);

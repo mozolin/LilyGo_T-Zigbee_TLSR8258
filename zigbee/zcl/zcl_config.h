@@ -149,6 +149,17 @@
 #endif
 
 /********************************************* Measurement and Sensing ********************************************/
+
+/********************* Relative Humidity Measurement ************************/
+#if ZCL_RELATIVE_HUMIDITY_MEASUREMENT_SUPPORT
+#define ZCL_RELATIVE_HUMIDITY_MEASUREMENT
+#endif
+
+/********************* Pressure Measurement ************************/
+#if ZCL_PRESSURE_MEASUREMENT_SUPPORT
+#define ZCL_PRESSURE_MEASUREMENT
+#endif
+
 /********************* Illuminance Measurement ************************/
 #if ZCL_ILLUMINANCE_MEASUREMENT_SUPPORT
 #define ZCL_ILLUMINANCE_MEASUREMENT

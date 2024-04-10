@@ -15,6 +15,8 @@ Before firmware update, adjust the DIP switch:
 ![](img/upload_mode.png)
 
 1) Install Telink IDE – based on C/C++ Eclipse IDE (https://wiki.telink-semi.cn/wiki/IDE-and-Tools/IDE-for-TLSR8-Chips/)  
+![](img/_hciDevice_ZR_8258_08.png)
+
 2) Unpack project zip-file into the folder  
 ![](img/_hciDevice_ZR_8258_01.png)
 

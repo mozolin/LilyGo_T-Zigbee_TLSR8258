@@ -10,6 +10,11 @@
 #define APP_GW_ENDPOINT3   3
 #define APP_GW_ENDPOINT4   4
 #define APP_GW_ENDPOINT5   5
+#define APP_GW_ENDPOINT6   6
+#define APP_GW_ENDPOINT7   7
+#define APP_GW_ENDPOINT8   8
+#define APP_GW_ENDPOINT9   9
+#define APP_GW_ENDPOINT10  10
 
 /**********************************************************************
  * TYPEDEFS
@@ -63,22 +68,21 @@ extern app_ctx_t g_appGwCtx;
 extern bdb_appCb_t g_zbDemoBdbCb;
 
 extern u8 APP_GW_CB_CLUSTER_NUM;
-extern u8 APP_GW_CB_CLUSTER_NUM2;
-extern u8 APP_GW_CB_CLUSTER_NUM3;
-extern u8 APP_GW_CB_CLUSTER_NUM4;
-extern u8 APP_GW_CB_CLUSTER_NUM5;
+extern u8 APP_GW_CB_CLUSTER_NUM_EXTRA;
 
 extern const zcl_specClusterInfo_t g_appClusterList[];
-extern const zcl_specClusterInfo_t g_appClusterList2[];
-extern const zcl_specClusterInfo_t g_appClusterList3[];
-extern const zcl_specClusterInfo_t g_appClusterList4[];
-extern const zcl_specClusterInfo_t g_appClusterList5[];
+extern const zcl_specClusterInfo_t g_appClusterListExtra[];
 
 extern const af_simple_descriptor_t app_simpleDesc;
 extern const af_simple_descriptor_t app_simpleDesc2;
 extern const af_simple_descriptor_t app_simpleDesc3;
 extern const af_simple_descriptor_t app_simpleDesc4;
 extern const af_simple_descriptor_t app_simpleDesc5;
+extern const af_simple_descriptor_t app_simpleDesc6;
+extern const af_simple_descriptor_t app_simpleDesc7;
+extern const af_simple_descriptor_t app_simpleDesc8;
+extern const af_simple_descriptor_t app_simpleDesc9;
+extern const af_simple_descriptor_t app_simpleDesc10;
 
 /* Attributes */
 extern zcl_basicAttr_t g_zcl_basicAttrs;

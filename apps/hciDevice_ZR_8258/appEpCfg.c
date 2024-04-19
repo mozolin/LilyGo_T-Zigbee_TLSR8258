@@ -54,7 +54,15 @@ const u16 app_inClusterList[] =
   #endif
   #ifdef ZCL_ILLUMINANCE_MEASUREMENT
     //-- address = 0x0400
-    ZCL_CLUSTER_MS_ILLUMINANCE_MEASUREMENT
+    ZCL_CLUSTER_MS_ILLUMINANCE_MEASUREMENT,
+  #endif
+  #ifdef ZCL_OCCUPANCY_SENSING
+    //-- address = 0x0406
+	  ZCL_CLUSTER_MS_OCCUPANCY_SENSING,
+  #endif
+  #ifdef ZCL_CO2_MEASUREMENT
+    //-- address = 0x040D
+    ZCL_CLUSTER_MS_CO2,
   #endif
 };
 
@@ -82,7 +90,15 @@ const u16 app_inClusterListExtra[] =
   #endif
   #ifdef ZCL_ILLUMINANCE_MEASUREMENT
     //-- address = 0x0400
-    ZCL_CLUSTER_MS_ILLUMINANCE_MEASUREMENT
+    ZCL_CLUSTER_MS_ILLUMINANCE_MEASUREMENT,
+  #endif
+  #ifdef ZCL_OCCUPANCY_SENSING
+    //-- address = 0x0406
+	  ZCL_CLUSTER_MS_OCCUPANCY_SENSING,
+  #endif
+  #ifdef ZCL_CO2_MEASUREMENT
+    //-- address = 0x040D
+    ZCL_CLUSTER_MS_CO2,
   #endif
 };
 const u16 app_outClusterListExtra[] =
@@ -397,6 +413,28 @@ const zcl_specClusterInfo_t g_appClusterList[] =
       NULL
     },
   #endif
+  #ifdef ZCL_OCCUPANCY_SENSING
+    {
+      //-- address = 0x0406
+      ZCL_CLUSTER_MS_OCCUPANCY_SENSING,
+      MANUFACTURER_CODE_NONE,
+      0,
+      NULL,
+      zcl_occupancySensing_register,
+      NULL
+    },
+  #endif
+  #ifdef ZCL_CO2_MEASUREMENT
+    {
+      //-- address = 0x040D
+      ZCL_CLUSTER_MS_CO2,
+      MANUFACTURER_CODE_NONE,
+      0,
+      NULL,
+      zcl_co2_measurement_register,
+      NULL
+    },
+  #endif
 };
 
 const zcl_specClusterInfo_t g_appClusterListExtra[] =
@@ -441,6 +479,28 @@ const zcl_specClusterInfo_t g_appClusterListExtra[] =
       0,
       NULL,
       zcl_illuminanceMeasure_register,
+      NULL
+    },
+  #endif
+  #ifdef ZCL_OCCUPANCY_SENSING
+    {
+      //-- address = 0x0406
+      ZCL_CLUSTER_MS_OCCUPANCY_SENSING,
+      MANUFACTURER_CODE_NONE,
+      0,
+      NULL,
+      zcl_occupancySensing_register,
+      NULL
+    },
+  #endif
+  #ifdef ZCL_CO2_MEASUREMENT
+    {
+      //-- address = 0x040D
+      ZCL_CLUSTER_MS_CO2,
+      MANUFACTURER_CODE_NONE,
+      0,
+      NULL,
+      zcl_co2_measurement_register,
       NULL
     },
   #endif

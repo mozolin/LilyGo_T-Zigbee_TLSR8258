@@ -118,7 +118,9 @@ extern "C" {
 #define ZCL_DOOR_LOCK_SUPPORT                       1
 #define ZCL_TEMPERATURE_MEASUREMENT_SUPPORT         1
 #define ZCL_ILLUMINANCE_MEASUREMENT_SUPPORT         1
+#define ZCL_OCCUPANCY_SENSING_SUPPORT               1
 #define ZCL_RELATIVE_HUMIDITY_MEASUREMENT_SUPPORT   1
+#define ZCL_CO2_MEASUREMENT_SUPPORT                 1
 #define ZCL_PRESSURE_MEASUREMENT_SUPPORT            1
 #define ZCL_IAS_ZONE_SUPPORT                        1
 #define ZCL_POLL_CTRL_SUPPORT                       1

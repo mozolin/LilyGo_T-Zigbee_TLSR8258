@@ -37,6 +37,9 @@ const u16 app_inClusterList[] =
 {
   ZCL_CLUSTER_GEN_BASIC,
   ZCL_CLUSTER_GEN_IDENTIFY,
+  #ifdef ZCL_TIME
+    ZCL_CLUSTER_GEN_TIME,
+  #endif
   #ifdef ZCL_OTA
     ZCL_CLUSTER_OTA,
   #endif
@@ -63,6 +66,14 @@ const u16 app_inClusterList[] =
   #ifdef ZCL_CO2_MEASUREMENT
     //-- address = 0x040D
     ZCL_CLUSTER_MS_CO2,
+  #endif
+  #ifdef ZCL_ANALOG_INPUT_MEASUREMENT
+    //-- address = 0x000C
+    ZCL_CLUSTER_GEN_ANALOG_INPUT_BASIC,
+  #endif
+  #ifdef ZCL_ANALOG_OUTPUT_MEASUREMENT
+    //-- address = 0x000D
+    ZCL_CLUSTER_GEN_ANALOG_OUTPUT_BASIC,
   #endif
 };
 
@@ -99,6 +110,14 @@ const u16 app_inClusterListExtra[] =
   #ifdef ZCL_CO2_MEASUREMENT
     //-- address = 0x040D
     ZCL_CLUSTER_MS_CO2,
+  #endif
+  #ifdef ZCL_ANALOG_INPUT_MEASUREMENT
+    //-- address = 0x000C
+    ZCL_CLUSTER_GEN_ANALOG_INPUT_BASIC,
+  #endif
+  #ifdef ZCL_ANALOG_OUTPUT_MEASUREMENT
+    //-- address = 0x000D
+    ZCL_CLUSTER_GEN_ANALOG_OUTPUT_BASIC,
   #endif
 };
 const u16 app_outClusterListExtra[] =
@@ -435,6 +454,28 @@ const zcl_specClusterInfo_t g_appClusterList[] =
       NULL
     },
   #endif
+  #ifdef ZCL_ANALOG_INPUT_MEASUREMENT
+    {
+      //-- address = 0x000C
+      ZCL_CLUSTER_GEN_ANALOG_INPUT_BASIC,
+      MANUFACTURER_CODE_NONE,
+      0,
+      NULL,
+      zcl_analog_input_register,
+      NULL
+    },
+  #endif
+  #ifdef ZCL_ANALOG_OUTPUT_MEASUREMENT
+    {
+      //-- address = 0x000D
+      ZCL_CLUSTER_GEN_ANALOG_OUTPUT_BASIC,
+      MANUFACTURER_CODE_NONE,
+      0,
+      NULL,
+      zcl_analog_output_register,
+      NULL
+    },
+  #endif
 };
 
 const zcl_specClusterInfo_t g_appClusterListExtra[] =
@@ -501,6 +542,28 @@ const zcl_specClusterInfo_t g_appClusterListExtra[] =
       0,
       NULL,
       zcl_co2_measurement_register,
+      NULL
+    },
+  #endif
+  #ifdef ZCL_ANALOG_INPUT_MEASUREMENT
+    {
+      //-- address = 0x000C
+      ZCL_CLUSTER_GEN_ANALOG_INPUT_BASIC,
+      MANUFACTURER_CODE_NONE,
+      0,
+      NULL,
+      zcl_analog_input_register,
+      NULL
+    },
+  #endif
+  #ifdef ZCL_ANALOG_OUTPUT_MEASUREMENT
+    {
+      //-- address = 0x000D
+      ZCL_CLUSTER_GEN_ANALOG_OUTPUT_BASIC,
+      MANUFACTURER_CODE_NONE,
+      0,
+      NULL,
+      zcl_analog_output_register,
       NULL
     },
   #endif

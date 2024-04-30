@@ -31,7 +31,7 @@
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.buildLocation</key>
-					<value>${workspace_loc:/tlsr8258/Debug}</value>
+					<value>${workspace_loc:/tlsr8258/build/tlsr_tc32}</value>
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.cleanBuildTarget</key>
@@ -122,6 +122,16 @@
 			<locationURI>PARENT-2-PROJECT_LOC/apps/common</locationURI>
 		</link>
 		<link>
+			<name>apps/factory_test</name>
+			<type>2</type>
+			<locationURI>PARENT-2-PROJECT_LOC/apps/factory_test</locationURI>
+		</link>
+		<link>
+			<name>apps/tlsr8258</name>
+			<type>2</type>
+			<locationURI>PARENT-2-PROJECT_LOC/apps/tlsr8258</locationURI>
+		</link>
+		<link>
 			<name>apps/sampleContactSensor</name>
 			<type>2</type>
 			<locationURI>PARENT-2-PROJECT_LOC/apps/sampleContactSensor</locationURI>
@@ -140,16 +150,6 @@
 			<name>apps/sampleSwitch</name>
 			<type>2</type>
 			<locationURI>PARENT-2-PROJECT_LOC/apps/sampleSwitch</locationURI>
-		</link>
-		<link>
-			<name>apps/factory_test</name>
-			<type>2</type>
-			<locationURI>PARENT-2-PROJECT_LOC/apps/factory_test</locationURI>
-		</link>
-		<link>
-			<name>apps/hciDevice_ZR_8258</name>
-			<type>2</type>
-			<locationURI>PARENT-2-PROJECT_LOC/apps/hciDevice_ZR_8258</locationURI>
 		</link>
 		<link>
 			<name>platform/boot</name>

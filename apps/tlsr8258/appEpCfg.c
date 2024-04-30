@@ -13,12 +13,18 @@
  * LOCAL CONSTANTS
  */
 #ifndef ZCL_BASIC_MFG_NAME
-//-- LilyGo
-#define ZCL_BASIC_MFG_NAME {6,'L','i','l','y','G','o'}
+  //-- LilyGo
+  #define ZCL_BASIC_MFG_NAME {6,'L','i','l','y','G','o'}
 #endif
 #ifndef ZCL_BASIC_MODEL_ID
-//-- APP.ESP32-C3
-#define ZCL_BASIC_MODEL_ID {13,'M','I','K','E','.','E','S','P','3','2','-','C','3'}
+  #if MIKE_BOARD_NUMBER == 1
+    //-- MIKE.ESP32-C3
+    #define ZCL_BASIC_MODEL_ID {13,'M','I','K','E','.','E','S','P','3','2','-','C','3'}
+  #endif
+  #if MIKE_BOARD_NUMBER == 2
+    //-- MIKE.ESP32-C3-2
+    #define ZCL_BASIC_MODEL_ID {15,'M','I','K','E','.','E','S','P','3','2','-','C','3','-','2'}
+  #endif
 #endif
 
 

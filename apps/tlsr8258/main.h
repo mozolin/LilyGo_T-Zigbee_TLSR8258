@@ -2,19 +2,27 @@
 #define _APP_GW_H_
 
 
+//------------------------------------------------
+// sets ZCL_BASIC_MODEL_ID to:
+//   - "MIKE.ESP32-C3"   (MIKE_BOARD_NUMBER = 1)
+//   - "MIKE.ESP32-C3-2" (MIKE_BOARD_NUMBER = 2)
+//------------------------------------------------
+#define MIKE_BOARD_NUMBER   2
+
+
 /**********************************************************************
  * CONSTANT
  */
-#define APP_GW_ENDPOINT    1
-#define APP_GW_ENDPOINT2   2
-#define APP_GW_ENDPOINT3   3
-#define APP_GW_ENDPOINT4   4
-#define APP_GW_ENDPOINT5   5
-#define APP_GW_ENDPOINT6   6
-#define APP_GW_ENDPOINT7   7
-#define APP_GW_ENDPOINT8   8
-#define APP_GW_ENDPOINT9   9
-#define APP_GW_ENDPOINT10  10
+#define APP_GW_ENDPOINT     1
+#define APP_GW_ENDPOINT2    2
+#define APP_GW_ENDPOINT3    3
+#define APP_GW_ENDPOINT4    4
+#define APP_GW_ENDPOINT5    5
+#define APP_GW_ENDPOINT6    6
+#define APP_GW_ENDPOINT7    7
+#define APP_GW_ENDPOINT8    8
+#define APP_GW_ENDPOINT9    9
+#define APP_GW_ENDPOINT10   10
 
 /**********************************************************************
  * TYPEDEFS
